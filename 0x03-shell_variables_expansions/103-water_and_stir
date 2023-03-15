@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((0x$(echo $WATER | tr 'water' '01234') + 0x$(echo $STIR | tr 'stir' '01234'))) | tr '0123456789abcdef' 'bestchol'
+echo "ibase=water;$WATER+ibase=stir;$STIR" | bc | tr -d '\n' | rev | sed 's/..../& /g' | rev | tr ' ' '\n' | tr -d '\n' | rev | sed 's/..../& /g' | rev
