@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((2#${WATER^^} + $((16#${STIR^^}))))
+echo "ibase=water; $WATER + ibase=stir; $STIR" | bc | tr -d '\n' | echo "obase=bestchol; $(cat)" | bc
